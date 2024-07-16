@@ -32,6 +32,7 @@ urlpatterns = [
     path('agregartecnico/', agregartecnico, name='agregartecnico'),
     path('agregarsucursal/', agregarsucursal, name='agregarsucursal'),
     path('historial/', historial, name='historial'),
+    path('registro/', registro, name='registro'),
 ]
 
 if settings.DEBUG:
