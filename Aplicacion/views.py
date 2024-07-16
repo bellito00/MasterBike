@@ -131,6 +131,42 @@ def historial(request):
 
     return render(request, 'Otaku_ody/historial.html', {'entity': mantencion_paginados, 'paginator': paginator})
 
+@admin_required
+def mantenciontecnico(request):
+    mantenciones = Mantencion.objects.all()
+    paginator = Paginator(mantenciones, 4)
+
+    page = request.GET.get('page')
+    try:
+        mantenciones_paginados = paginator.get_page(page)
+    except PageNotAnInteger:
+        mantenciones_paginados = paginator.get_page(1)
+    except EmptyPage:
+        mantenciones_paginados = paginator.get_page(paginator.num_pages)
+
+    return render(request, 'Otaku_ody/mantenciontecnico.html', {'entity': mantenciones_paginados, 'paginator': paginator})
+
+@admin_required
+def modificartecnico(request, id):
+    mantencion = get_object_or_404(Mantencion, id=id)
+    form = ModificarMantencionForm(instance=mantencion)
+    if request.method == 'POST':
+        form = ModificarMantencionForm(request.POST, request.FILES, instance=mantencion)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Mantencion Modificada')
+            return redirect('mantenciontecnico')
+    return render(request, 'Otaku_ody/modificartecnico.html', {'form': form})
+
+@admin_required
+def eliminarmantenciontecnico(request, id):
+    mantencion = get_object_or_404(Mantencion, id=id)
+    if mantencion.imagen:
+        mantencion.imagen.delete()
+    mantencion.delete()
+    messages.warning(request, 'Mantencion Eliminada')
+    return redirect('mantenciontecnico')
+
 # Vistas para autenticación
 def login_view(request):
     return render(request, 'registration/login.html')
@@ -146,3 +182,4 @@ def registro(request):
             messages.success(request, "Te has registrado correctamente")
             return redirect('index')
     return render(request, 'registration/registro.html', {'form': form})
+
