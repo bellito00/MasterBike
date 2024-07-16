@@ -33,6 +33,9 @@
                         <li class="nav-item" style="margin-right: 20px;">
                             <a class="nav-link hover-effect" href="{% url 'administracion' %}">Administracion</a>
                         </li>
+                        <li class="nav-item" style="margin-right: 20px;">
+                            <a class="nav-link hover-effect" href="{% url 'mantenciontecnico' %}">Mantenciones</a>
+                        </li>
                         {% endif %}
                         {% if user.is_authenticated %}
                         <form action="{% url 'logout' %}" method="post">
