@@ -18,7 +18,7 @@
 
 .nav-item .nav-link.hover-effect:hover {
     transform: scale(1.1); /* Escala el elemento al 110% de su tamaño original */
-    color: rgb(255, 115, 0) !important; /* Cambia el color del texto a naranja */
+    color: rgb(51, 7, 172) !important; /* Cambia el color del texto a naranja */
 }
 
 /*NAVBAR*/
@@ -27,7 +27,7 @@
 }
 
 body {
-    background-image: url("https://images6.alphacoders.com/134/thumb-1920-1345660.png");
+    background-image: url("https://images4.alphacoders.com/118/1182361.jpg");
     background-size: cover; /* Estira la imagen para cubrir todo el fondo */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-position: center; /* Centra la imagen en el fondo */
@@ -124,7 +124,7 @@ footer a {
 
 footer a:hover {
     transform: scale(1.2); /* Aumenta la escala al 110% al pasar el cursor */
-    color: rgb(255, 115, 0); /* Color de los enlaces al pasar el cursor */
+    color: rgb(51, 7, 172); /* Color de los enlaces al pasar el cursor */
 }
 
 .footer img {

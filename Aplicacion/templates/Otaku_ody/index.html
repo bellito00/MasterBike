@@ -6,7 +6,7 @@
 <html lang="es">
 
 <head>
-    <title>{% block title %}Otaku Odyssey{% endblock %}</title>
+    <title>{% block title %}Master Bikes{% endblock %}</title>
 </head>
 
 <body>
@@ -17,7 +17,6 @@
                     <h1 class="text-center pt-3 fw-bold">Productos Destacados</h1>
                     <h3 class="text-center pb-3">Algunos de nuestros productos más vistos!</h3>
                     <div class="carousel-container">
-
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -41,9 +40,7 @@
                             <img src="{% static 'img/logo.png' %}" alt="logo" style="width:120px;" class="rounded-pill logo-effect">
                         </a>
                         <div class="d-flex flex-column align-items-end mt-3">
-                            <a class="footer" href="">Inicio</a>
-                            <a class="footer" href="">Contacto</a>
-                            <a class="footer" href="">Preguntas Frecuentes</a>
+                            <a class="footer" href="{% url 'index' %}">Inicio</a>
                         </div>
                     </div>
                 </div>
